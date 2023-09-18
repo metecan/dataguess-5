@@ -72,6 +72,13 @@ const StyledTableBodyItem = styled.div`
   &:nth-child(1) {
     width: 50%;
   }
+
+  @media (max-width: 1240px) {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 const HistoryTable: FC<HistoryTableProps> = ({ items }) => {

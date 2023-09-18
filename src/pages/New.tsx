@@ -48,6 +48,10 @@ const StyledEditHistoryWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
   margin-top: 44px;
+
+  @media (max-width: 1240px) {
+    width: 100%;
+  }
 `;
 
 const StyledFileInput = styled.input`

@@ -19,11 +19,13 @@ const StyledEditor = styled.div`
   align-items: center;
   justify-content: space-evenly;
   gap: 50px;
+  padding: 12px;
 `;
 
 const StyledImageWrapper = styled.div`
   width: auto;
-  height: 400px;
+  max-height: 400px;
+  height: auto;
   border-radius: 20px;
   overflow: hidden;
 `;
@@ -40,10 +42,15 @@ const StyledEffectsWrapper = styled.div`
   padding: 24px 48px;
   border-radius: 20px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.BACKGROUND};
   gap: 100px;
+
+  @media (max-width: 1600px) {
+    gap: 50px;
+  }
 `;
 
 const Editor: FC<EditorProps> = () => {

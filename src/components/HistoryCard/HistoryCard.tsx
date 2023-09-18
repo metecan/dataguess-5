@@ -26,6 +26,9 @@ const StyledHistoryCardImage = styled.img<{ effect: string }>`
 const StyledHistoryCardName = styled.span`
   font-size: 16px;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const HistoryCard: FC<HistoryCardProps> = ({ image, effect, name }) => {
