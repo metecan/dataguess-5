@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import type { FC } from 'react';
 
-function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Editor from './pages/Editor';
+import New from './pages/New';
+import Navbar from './components/Navbar/Navbar';
+import styled from 'styled-components';
+
+const StyledLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 40px 20px 40px;
+  position: relative;
+`;
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <StyledLayout>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<New />} />
+          <Route path="editor" element={<Editor />}>
+            <Route path=":itemId" element={<Editor />} />
+          </Route>
+        </Routes>
+      </StyledLayout>
+    </BrowserRouter>
   );
-}
-
+};
 export default App;
